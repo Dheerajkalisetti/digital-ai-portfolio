@@ -1,0 +1,100 @@
+{
+    "name": "Kalisetti Dheeraj Babu",
+    "title": "Software Engineer",
+    "email": "dheerajkalisetti@gmail.com",
+    "phone": "+91 7382686297",
+    "location": "Andhra Pradesh, India (Open to Relocation)",
+    "summary": "Software Engineer experienced in full-stack development, backend and frontend technologies, big data analytics, multi-cloud infrastructure (AWS, GCP, Azure), DevOps practices, and cyber-security. Skilled in Python, Java, JavaScript, React.js, Django, Apache Spark, Hadoop, RESTful APIs, OAuth2.0, CI/CD pipelines, API security, and Agile methodologies. Proven track record building scalable, secure, no-code platforms and data-driven applications.",
+    "skills": [
+        "Python",
+        "Java",
+        "JavaScript",
+        "SQL",
+        "HTML5",
+        "CSS3",
+        "React.js",
+        "Django",
+        "React Native",
+        "Vite",
+        "Expo Go",
+        "ReactFlow",
+        "Protobuf",
+        "Thrift",
+        "AWS (EC2, S3, Lambda)",
+        "GCP (Dataproc, BigQuery, Cloud Storage)",
+        "Azure (HDInsight, Synapse, Blob Storage, Cosmos DB)",
+        "Apache Spark",
+        "Hadoop",
+        "DuckDB",
+        "MapReduce",
+        "PostgreSQL",
+        "Infrastructure Automation",
+        "CI/CD Pipelines",
+        "Docker",
+        "Git",
+        "Jira",
+        "Agile",
+        "Encryption/Decryption",
+        "OAuth2.0",
+        "API Security",
+        "Threat Detection",
+        "Prompt Engineering",
+        "Workflow Automation"
+    ],
+    "experience": [
+        {
+            "role": "Software Engineer",
+            "company": "Zinzu.io",
+            "location": "Seattle, USA (Remote)",
+            "duration": "Mar 2024 – Present",
+            "description": "Building a game-changing big data analytics platform enabling no-code data querying and visualization. Developed full-stack applications using React.js and Django with secure OAuth. Implemented GA4 analytics, anomaly detection, behavior flow visualization tools boosting engagement by 25%. Leveraged Spark, PySpark, Hadoop, BigQuery, Dataproc for distributed processing reducing query times by 30%. Managed infrastructure across AWS, GCP, Azure with 99.9% uptime."
+        },
+        {
+            "role": "Software Development Engineer Intern",
+            "company": "Quotient Technologies",
+            "location": "Bangalore, India",
+            "duration": "Oct 2022 – Mar 2024",
+            "description": "Designed and deployed scalable software solutions. Reduced bug resolution time by 35% through improved debugging processes. Delivered projects including ALC Offer Migration, Tiered Pinning, and Airflow migration."
+        },
+        {
+            "role": "Cyber Security Trainee",
+            "company": "Verzeo EduTech",
+            "location": "Virtual",
+            "duration": "Apr 2021 – May 2021",
+            "description": "Performed network log monitoring, vulnerability assessments, and penetration testing simulations. Improved security posture by 20% through documented findings."
+        }
+    ],
+    "projects": [
+        {
+            "name": "aihub – Multi-AI Chat Platform",
+            "description": "Unified conversational workspace integrating Grok, DeepSeek, Claude, and ChatGPT using React and FastAPI. Features persistent sessions, local storage, and responsive UI."
+        },
+        {
+            "name": "Real Estate Platform",
+            "description": "Freelance project. Developed full-stack web and mobile application for property listings and lead tracking using Django REST, React, and Expo Go. Improved agent productivity by 60%."
+        },
+        {
+            "name": "Auction Management System",
+            "description": "Django-based auction platform with dynamic bidding, secure transactions, and real-time updates."
+        }
+    ],
+    "education": [
+        {
+            "degree": "B.Tech in Computer Science & Engineering",
+            "institution": "K L University, Andhra Pradesh",
+            "year": "Jun 2019 – Apr 2023",
+            "specialization": "Cyber Security — CGPA: 8.48"
+        }
+    ],
+    "certifications": [
+        "AWS Certified Solutions Architect – Associate",
+        "Microsoft Certified: Azure Fundamentals",
+        "Juniper Networks Certified Associate – JNCIA",
+        "ServiceNow Certified System Administrator"
+    ],
+    "contact": {
+        "email": "dheerajkalisetti@gmail.com",
+        "linkedin": "Portfolio Link (Placeholder)",
+        "github": "GitHub Link (Placeholder)"
+    }
+}
