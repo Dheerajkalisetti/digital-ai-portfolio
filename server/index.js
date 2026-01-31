@@ -142,9 +142,12 @@ app.get('/', (req, res) => {
   res.send('AI Portfolio Backend is running!');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-  if (!GEMINI_API_KEY) {
-    console.warn('⚠️  WARNING: GEMINI_API_KEY is not set!');
-  }
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    if (!GEMINI_API_KEY) {
+      console.warn('⚠️  WARNING: GEMINI_API_KEY is not set!');
+    }
+  });
+}
+
+export default app;
