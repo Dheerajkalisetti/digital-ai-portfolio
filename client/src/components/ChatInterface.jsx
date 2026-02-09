@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import AvatarCircle from './AvatarCircle';
-import ProfilePic from '../assets/kalisettidheeraj.jpeg';
+import ProfilePic from '../../assets/kalisettidheeraj.jpeg';
 
 // --- Utility for Tailwind classes ---
 function cn(...inputs) {
