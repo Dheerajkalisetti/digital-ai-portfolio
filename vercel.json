@@ -22,8 +22,8 @@
             "handle": "filesystem"
         },
         {
-            "src": "/(.*)",
-            "dest": "/client/dist/index.html"
+            "src": "/client/(.*)",
+            "dest": "/client/dist/$1"
         }
     ]
 }
