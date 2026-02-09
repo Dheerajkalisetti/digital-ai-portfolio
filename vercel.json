@@ -19,8 +19,8 @@
             "destination": "/api/$1"
         },
         {
-            "source": "client/(.*)",
-            "destination": "client/dist/$1"
+            "source": "/client/(.*)",
+            "destination": "/client/dist/$1"
         }
     ]
 }
