@@ -196,11 +196,20 @@ const ChatInterface = () => {
     const workletNodeRef = useRef(null);
     const nextPlayTimeRef = useRef(0);
     const listeningTimeoutRef = useRef(null);
+    // Controls whether microphone audio should be forwarded to the session.
+    const micEnabledRef = useRef(true);
 
     // --- Effects ---
     useEffect(() => {
         if (showChat) scrollToBottom();
     }, [messages, debugLogs, showChat]);
+
+    // Keep micEnabledRef in sync with voice state. When the model is speaking,
+    // disable sending microphone audio to avoid low-volume/conflict on mobile.
+    useEffect(() => {
+        // Enable mic only when in listening state.
+        micEnabledRef.current = (voiceState === 'listening');
+    }, [voiceState]);
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -370,7 +379,8 @@ const ChatInterface = () => {
                 const rms = Math.sqrt(sum / float32Data.length);
                 setMicLevel(Math.min(1, rms * 8));
 
-                if (session) {
+                // Only forward microphone audio to the session when mic is enabled.
+                if (session && micEnabledRef.current) {
                     const base64Audio = float32ToBase64PCM(float32Data);
                     try {
                         session.sendRealtimeInput({
