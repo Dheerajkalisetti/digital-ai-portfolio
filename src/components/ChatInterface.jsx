@@ -486,7 +486,7 @@ const ChatInterface = () => {
 
     // --- Render ---
     return (
-        <div className="relative h-screen w-full overflow-hidden bg-[#0A1F1C] selection:bg-emerald-200 selection:text-emerald-900 font-sans">
+        <div className="relative min-h-screen w-full overflow-hidden bg-[#0A1F1C] selection:bg-emerald-200 selection:text-emerald-900 font-sans">
 
             {/* 1. Static Elegant Background --- */}
             <div className="absolute inset-0 z-0">
@@ -534,7 +534,7 @@ const ChatInterface = () => {
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="absolute top-0 left-0 right-0 z-20 p-8 flex justify-between items-start"
+                className="absolute top-0 left-0 right-0 z-20 px-4 py-3 sm:px-6 sm:py-4 md:px-8 md:py-6 flex justify-between items-center"
             >
                 <div className="flex items-center gap-4">
                     {/* Logo / Icon Container - Chrome/Silver finish */}
@@ -542,12 +542,12 @@ const ChatInterface = () => {
                         <img
                             src={ProfilePic}
                             alt="Dheeraj Kalisetti"
-                            className="w-14 h-14 rounded-full object-cover ring-2 ring-emerald-900/20"
+                            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover ring-2 ring-emerald-900/20"
                         />
                     </div>
 
                     <div>
-                        <h1 className="text-2xl font-serif font-medium tracking-tight text-white drop-shadow-md">
+                        <h1 className="text-lg sm:text-xl md:text-2xl font-serif font-medium tracking-tight text-white drop-shadow-md">
                             Dheeraj Kalisetti
                         </h1>
                         <p className="text-xs text-emerald-100/60 font-medium tracking-widest uppercase">Software Engineer</p>
@@ -556,7 +556,7 @@ const ChatInterface = () => {
 
                 {/* Connection Status - "Jewel" style */}
                 <div className={cn(
-                    "px-4 py-1.5 rounded-full border backdrop-blur-md text-[10px] font-bold tracking-widest uppercase transition-all duration-500 flex items-center gap-2.5 shadow-lg",
+                    "px-3 py-1 rounded-full border backdrop-blur-md text-[10px] font-bold tracking-widest uppercase transition-all duration-500 flex items-center gap-2 sm:gap-2.5 shadow-lg",
                     connectionStatus === 'connected'
                         ? "bg-[#051412]/60 border-emerald-500/30 text-emerald-400 shadow-emerald-900/20"
                         : connectionStatus === 'connecting'
@@ -574,7 +574,7 @@ const ChatInterface = () => {
             </motion.div>
 
             {/* 3. Hero / Avatar --- */}
-            <div className="relative z-10 flex flex-col items-center justify-center h-full pb-24">
+            <div className="relative z-10 flex flex-col items-center justify-center min-h-[60vh] md:h-full pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-20 md:pb-24 px-4 sm:px-6">
                 <AnimatePresence mode="wait">
                     {!isInCall ? (
                         <motion.div
@@ -586,22 +586,22 @@ const ChatInterface = () => {
                             className="text-center max-w-4xl px-6"
                         >
                             {/* Dynamic Typewriter Headline */}
-                            <div className="h-32 md:h-40 flex items-center justify-center mb-8">
-                                <h2 className="text-4xl md:text-6xl font-serif text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-100 to-gray-400 tracking-tight drop-shadow-sm leading-[1.2]">
+                            <div className="h-28 md:h-40 flex items-center justify-center mb-6 sm:mb-8">
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-serif text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-100 to-gray-400 tracking-tight drop-shadow-sm leading-[1.1]">
                                     {typewriterText}
                                     <span className="w-1 h-12 md:h-16 inline-block bg-emerald-400 ml-2 animate-pulse align-middle" />
                                 </h2>
                             </div>
 
-                            <p className="text-lg text-emerald-100/70 mb-12 font-light max-w-xl mx-auto leading-relaxed">
+                            <p className="text-base sm:text-lg text-emerald-100/70 mb-10 sm:mb-12 font-light max-w-xl mx-auto leading-relaxed">
                                 Curious about my work? You can chat with my AI assistant to learn about my experience, projects, and how I approach building software.
                             </p>
 
-                            <div className="flex flex-col gap-5 justify-center items-center w-full max-w-md mx-auto">
+                            <div className="flex flex-col gap-4 justify-center items-center w-full max-w-md mx-auto">
                                 {/* Primary Voice Action */}
                                 <button
                                     onClick={startCall}
-                                    className="group relative w-full flex items-center justify-center gap-4 px-8 py-5 rounded-full font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-emerald-900/20"
+                                    className="group relative w-full flex items-center justify-center gap-3 px-6 py-4 sm:px-8 sm:py-5 rounded-full font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-emerald-900/20"
                                 >
                                     {/* Chrome/Green Button Background */}
                                     <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white via-gray-100 to-gray-400 border border-white/60" />
@@ -618,7 +618,7 @@ const ChatInterface = () => {
                                 {/* Secondary Chat Input-Style Button */}
                                 <button
                                     onClick={() => setShowChat(true)}
-                                    className="group relative w-full flex items-center justify-between px-6 py-4 rounded-full transition-all duration-300 bg-[#0A1F1C] border border-white/10 hover:border-emerald-500/30 hover:bg-[#0D2E26] shadow-inner text-left"
+                                    className="group relative w-full flex items-center justify-between px-5 py-3 sm:px-6 sm:py-4 rounded-full transition-all duration-300 bg-[#0A1F1C] border border-white/10 hover:border-emerald-500/30 hover:bg-[#0D2E26] shadow-inner text-left"
                                 >
                                     <span className="text-emerald-500/40 text-lg font-light tracking-wide group-hover:text-emerald-400/60 transition-colors">
                                         Ask anything about Dheeraj...
@@ -664,7 +664,7 @@ const ChatInterface = () => {
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="absolute -bottom-24 left-0 right-0 text-center"
+                                className="absolute -bottom-20 md:-bottom-24 left-0 right-0 text-center"
                             >
                                 <span className={cn(
                                     "text-sm font-light tracking-[0.2em] uppercase transition-colors duration-500",
@@ -687,17 +687,17 @@ const ChatInterface = () => {
                         initial={{ y: 100, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: 100, opacity: 0 }}
-                        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-30"
+                        className="absolute bottom-6 sm:bottom-8 md:bottom-12 inset-x-0 z-30 px-4 flex justify-center"
                     >
                         {/* Metallic Container */}
-                        <div className="relative p-[1px] rounded-full bg-gradient-to-b from-white/20 to-black/40 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-2xl">
-                            <div className="flex items-center gap-6 px-8 py-3 bg-[#0A1F1C]/80 rounded-full border border-white/5 relative overflow-hidden">
+                        <div className="relative p-[1px] rounded-full bg-gradient-to-b from-white/20 to-black/40 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-2xl mx-auto max-w-3xl">
+                            <div className="flex items-center gap-4 px-4 sm:px-6 py-2 sm:py-3 bg-[#0A1F1C]/80 rounded-full border border-white/5 relative overflow-hidden">
 
                                 {/* Metallic Sheen Overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none rounded-full" />
 
                                 {/* Mic Visualizer - Specialized Green */}
-                                <div className="flex items-end gap-1.5 h-6 w-24 mr-2">
+                                <div className="flex items-end gap-1 h-6 w-20 mr-2">
                                     {[...Array(5)].map((_, i) => (
                                         <div
                                             key={i}
@@ -715,7 +715,7 @@ const ChatInterface = () => {
 
                                 <div className="h-8 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent" />
 
-                                <div className="flex items-center gap-3">
+                                <div className="flex items-center gap-2 sm:gap-3">
                                     <button
                                         onClick={endCall}
                                         className="group p-3 rounded-full hover:bg-rose-950/30 transition-all duration-200 active:scale-95 border border-transparent hover:border-rose-500/30"
@@ -753,7 +753,7 @@ const ChatInterface = () => {
                         className="fixed inset-0 z-50 bg-[#051412]/90 flex flex-col font-sans"
                     >
                         {/* Header (Executive) */}
-                        <div className="flex-none h-24 flex items-center justify-between px-8 sm:px-16 border-b border-white/5">
+                        <div className="flex-none h-20 sm:h-24 flex items-center justify-between px-4 sm:px-8 md:px-16 border-b border-white/5">
                             <div className="flex items-center gap-5">
                                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gray-700 to-black shadow-lg border border-white/10 flex items-center justify-center">
                                     <Sparkles className="w-5 h-5 text-emerald-400" />
@@ -776,7 +776,7 @@ const ChatInterface = () => {
 
                         {/* Messages Container */}
                         <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
-                            <div className="max-w-4xl mx-auto px-8 py-12 space-y-12">
+                            <div className="max-w-3xl sm:max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-12 space-y-10 sm:space-y-12">
                                 {/* Intro Message if empty */}
                                 {messages.length === 0 && (
                                     <div className="flex flex-col items-center justify-center h-64 text-center opacity-30 mt-20">
@@ -795,13 +795,13 @@ const ChatInterface = () => {
                                         transition={{ duration: 0.5, delay: index * 0.05, ease: "easeOut" }}
                                         key={index}
                                         className={cn(
-                                            "flex gap-6 w-full",
+                                            "flex gap-4 w-full",
                                             msg.role === 'user' ? "flex-row-reverse" : "flex-row"
                                         )}
                                     >
                                         {/* Avatar */}
                                         <div className={cn(
-                                            "w-10 h-10 rounded-full flex items-center justify-center shrink-0 border shadow-2xl",
+                                            "w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0 border shadow-2xl",
                                             msg.role === 'user'
                                                 ? "bg-[#1A2E29] border-white/10 text-emerald-100" // User Avatar
                                                 : "bg-gradient-to-br from-gray-100 to-gray-400 border-white/20 text-black" // AI Avatar (Chrome)
@@ -815,11 +815,11 @@ const ChatInterface = () => {
 
                                         {/* Content Bubble */}
                                         <div className={cn(
-                                            "max-w-[75%] text-lg leading-relaxed font-light",
+                                            "max-w-[80%] sm:max-w-[75%] md:max-w-[60%] text-base sm:text-lg leading-relaxed font-light",
                                             msg.role === 'user' ? "text-right" : "text-left"
                                         )}>
                                             {msg.role === 'user' ? (
-                                                <div className="bg-white/10 backdrop-blur-md text-white px-8 py-5 rounded-2xl rounded-tr-sm border border-white/5 shadow-lg inline-block">
+                                                <div className="bg-white/10 backdrop-blur-md text-white px-4 py-3 sm:px-6 sm:py-4 rounded-2xl rounded-tr-sm border border-white/5 shadow-lg inline-block">
                                                     {msg.text}
                                                 </div>
                                             ) : (
