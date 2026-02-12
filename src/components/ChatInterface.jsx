@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { Send, Mic, MicOff, Volume2, VolumeX, Phone, PhoneOff, Activity, Loader2, Sparkles, ChevronRight, X } from 'lucide-react';
+import { Send, Mic, MicOff, Volume2, VolumeX, Phone, PhoneOff, Activity, Loader2, Sparkles, ChevronRight, X, Languages } from 'lucide-react';
 import { GoogleGenAI, Modality } from '@google/genai';
 import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
@@ -611,7 +611,7 @@ const ChatInterface = () => {
                                 {/* Primary Voice Action */}
                                 <button
                                     onClick={startCall}
-                                    className="group relative w-full flex items-center justify-center gap-3 px-6 py-4 sm:px-8 sm:py-5 rounded-full font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-emerald-900/20"
+                                    className="group relative w-full flex flex-col items-center justify-center gap-1 px-6 py-4 sm:px-8 sm:py-5 rounded-full font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-emerald-900/20"
                                 >
                                     {/* Chrome/Green Button Background */}
                                     <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white via-gray-100 to-gray-400 border border-white/60" />
@@ -623,7 +623,40 @@ const ChatInterface = () => {
                                         </div>
                                         Start Voice Session
                                     </span>
+                                    <span className="relative z-10 mt-1 text-sm sm:text-base font-bold bg-gradient-to-r from-emerald-600 via-red-400 to-emerald-800 bg-clip-text text-transparent animate-shimmer-glow">
+                                        Speak any language - I understand you
+                                    </span>
                                 </button>
+                                <style>{`
+                                    @keyframes shimmer-glow {
+                                        0% {
+                                            background-position: 0% 50%;
+                                            filter:
+                                                drop-shadow(0 0 6px rgba(2, 138, 93, 0.6))
+                                                drop-shadow(0 0 12px rgba(239, 68, 68, 0.4));
+                                        }
+
+                                        50% {
+                                            background-position: 100% 50%;
+                                            filter:
+                                                drop-shadow(0 0 12px rgba(16, 185, 129, 0.9))
+                                                drop-shadow(0 0 22px rgba(239, 68, 68, 0.8));
+                                        }
+
+                                        100% {
+                                            background-position: 0% 50%;
+                                            filter:
+                                                drop-shadow(0 0 6px rgba(16, 185, 129, 0.6))
+                                                drop-shadow(0 0 12px rgba(239, 68, 68, 0.4));
+                                        }
+                                    }
+
+                                    .animate-shimmer-glow {
+                                        background-size: 250% 250%;
+                                        animation: shimmer-glow 3s ease-in-out infinite;
+                                        transition: all 0.3s ease;
+                                    }
+                                `}</style>
 
                                 {/* Secondary Chat Input-Style Button */}
                                 <button
